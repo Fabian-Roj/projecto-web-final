@@ -1,9 +1,25 @@
+/*
 import { useState } from 'react'
 import heroImg from './assets/hero.png'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
+*/
+import { useEffect } from 'react'
 
+
+ 
+export default function App() { 
+  useEffect(() => { 
+    fetch("/api/servicios/") 
+      .then((res) => res.json()) 
+      .then((datos) => console.log("Datos recibidos:", datos)) 
+      .catch((err) => console.error("Falló la petición:", err)); 
+  }, []); 
+  
+  return <h1>Probando la conexión…</h1>;
+}
+/*
 function App() {
   const [count, setCount] = useState(0)
 
@@ -119,4 +135,6 @@ function App() {
   )
 }
 
+
 export default App
+*/
